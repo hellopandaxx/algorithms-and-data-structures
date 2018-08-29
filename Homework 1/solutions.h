@@ -159,28 +159,15 @@ void solution5()
         printf("Age should be between 1 and 150 year");
     }
     
-    int lastDigit = age % 10;
-    
     char* litheral="";
     
-    switch (lastDigit) {
-        case 0:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-            litheral = "Лет";
-            break;
-        case 1:
-            litheral = "Год";
-            break;
-        case 2:
-        case 3:
-        case 4:
-            litheral = "Года";
-            break;
-    }
+    if(age % 10 == 1 && (age % 100 != 11))
+        litheral = "Год";
+    else if ((age % 10 >= 2 && age % 10 < 5) &&
+             !(age % 100 >= 12 && age % 100 < 15))
+        litheral = "Года";
+    else
+        litheral = "Лет";
     
     printf("%d %s\n5", age, litheral);
 }
