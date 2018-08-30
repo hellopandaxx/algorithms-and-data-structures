@@ -117,7 +117,7 @@ void calc(int a, int b)
 {
     for (int i = 0; i<CALC_COMMANDS_AMOUNT; i++) {
         int result = calcCommand(a, i);
-        checkResult(a, b);
+        checkResult(result, b);
         if(a<b)
         {
             calc(result, b);
